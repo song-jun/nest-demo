@@ -6,6 +6,7 @@ import { TransformInterceptor } from './interceptor/transform.interceptor';
 import { HttpExceptionFilter } from './filter/http-exception.filter';
 import { AnyExceptionFilter } from './filter/any-exception.filter';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { knife4jSetup } from 'nest-knife4j';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -28,7 +29,18 @@ async function bootstrap() {
     .addTag('test')
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api-doc', app, document);
+  SwaggerModule.setup('api', app, document);
+  knife4jSetup(app, [
+    {
+      name: '2.X版本',
+      url: `/api-json`,
+      swaggerVersion: '2.0',
+      location: `/api-json`,
+    },
+  ]);
   await app.listen(3000);
+  console.log('!!!!!!!!!');
+  console.log('api-doc访问地址：http://localhost:3000/doc.html');
+  console.log('!!!!!!!!!');
 }
 bootstrap();

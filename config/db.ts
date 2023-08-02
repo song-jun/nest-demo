@@ -12,9 +12,9 @@ const localConfig = {
   mysql: {
     port: '3306',
     host: 'localhost',
-    user: 'root',
+    user: 'nest',
     password: '123456',
-    database: 'nest_zero_to_one', // 库名
+    database: 'nest', // 库名
     connectionLimit: 10, // 连接限制
   },
 };
