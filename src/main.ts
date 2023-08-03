@@ -7,6 +7,7 @@ import { HttpExceptionFilter } from './filter/http-exception.filter';
 import { AnyExceptionFilter } from './filter/any-exception.filter';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { knife4jSetup } from 'nest-knife4j';
+let chalk = require('Chalk');
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -40,7 +41,7 @@ async function bootstrap() {
   ]);
   await app.listen(3000);
   console.log('!!!!!!!!!');
-  console.log('api-doc访问地址：http://localhost:3000/doc.html');
+  console.log(chalk.blue('api-doc访问地址：http://localhost:3000/doc.html'));
   console.log('!!!!!!!!!');
 }
 bootstrap();
