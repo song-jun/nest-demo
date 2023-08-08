@@ -1,5 +1,5 @@
 // 根据日志级别，用不同颜色区分
-let Chalk = require('Chalk');
+let Chalk = require('chalk');
 export const log = {
   green(e) {
     return console.log('🚀', typeof e === 'object' ? e : Chalk.green(e));
