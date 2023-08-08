@@ -17,7 +17,7 @@ async function bootstrap() {
   app.use(logger);
   // 使用全局拦截器打印出参
   app.useGlobalInterceptors(new TransformInterceptor());
-  app.setGlobalPrefix('nest-zero-to-one'); // 全局路由前缀
+  // app.setGlobalPrefix('nest-zero-to-one'); // 全局路由前缀
   app.useGlobalFilters(new AnyExceptionFilter());
   // 过滤处理 HTTP 异常
   app.useGlobalFilters(new HttpExceptionFilter());
