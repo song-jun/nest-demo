@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import db from '../../config/db';
+import { User } from './initDb';
 
 const sequelize = new Sequelize(
   db.mysql.database,
@@ -26,6 +27,7 @@ sequelize
   .authenticate()
   .then(() => {
     console.log('数据库连接成功');
+    User(sequelize);
   })
   .catch((err: any) => {
     // 数据库连接失败时打印输出
