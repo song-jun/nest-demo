@@ -41,7 +41,7 @@ async function bootstrap() {
   ]);
   await app.listen(3333);
   console.log('!!!!!!!!!');
-  log.blue('api-doc访问地址：http://localhost:3000/doc.html');
+  log.blue('api-doc访问地址：http://localhost:3333/doc.html');
   console.log('!!!!!!!!!');
 }
 bootstrap();
