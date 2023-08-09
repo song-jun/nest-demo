@@ -99,25 +99,26 @@ export const User = async (sequelize) => {
   await sequelize.query(
     'CREATE TABLE IF NOT EXISTS blog(blogId smallint(6) unsigned NOT NULL auto_increment,id varchar(255),name varchar(255),memo varchar(255),type varchar(255),time varchar(255),text longtext,md longtext,comment varchar(255),star int(10),PRIMARY KEY (`blogId`) ) ENGINE=InnoDB DEFAULT CHARSET=gbk',
   );
-    log.blue('blog表创建成功');
-   await sequelize.query(
-      'CREATE TABLE IF NOT EXISTS muban(mubanId smallint(6) unsigned NOT NULL auto_increment,id varchar(255),name varchar(255),mubanUrl varchar(255),type varchar(255),time varchar(255),text longtext,md longtext,comment varchar(255),star int(10),PRIMARY KEY (`mubanId`) ) ENGINE=InnoDB DEFAULT CHARSET=gbk',
-    );
-    log.blue('muban表创建成功');
-   await sequelize.query(
-      'CREATE TABLE IF NOT EXISTS comment(commentId smallint(6) unsigned NOT NULL auto_increment,id varchar(255) ,blogId varchar(255),text varchar(255),PRIMARY KEY (`commentId`)) ENGINE=InnoDB DEFAULT CHARSET=gbk',
-    );
-    log.blue('comment表创建成功');
-   await sequelize.query(
-      'CREATE TABLE IF NOT EXISTS leaveword(lwId smallint(6) unsigned NOT NULL auto_increment,id varchar(255),name varchar(255),time varchar(255),text varchar(255),PRIMARY KEY(`lwId`)) ENGINE=InnoDB DEFAULT CHARSET=gbk',
-    );
-    log.blue('leaveword表创建成功');
-   await sequelize.query(
-      'CREATE TABLE IF NOT EXISTS visit(id smallint(6) unsigned NOT NULL auto_increment,name varchar(255),type varchar(255),ip varchar(255),address varchar(255),time int(100),PRIMARY KEY(`id`)) ENGINE=InnoDB DEFAULT CHARSET=gbk',
-    );
-    log.blue('visit表创建成功');
-   await sequelize.query(
-      'CREATE TABLE IF NOT EXISTS filedata(id smallint(6) unsigned NOT NULL auto_increment,path varchar(255),name varchar(255),str LONGTEXT,type varchar(255),cur int(100),PRIMARY KEY(`id`)) ENGINE=InnoDB DEFAULT CHARSET=gbk',
-    );
-    log.blue('filedata表创建成功');
+  log.blue('blog表创建成功');
+  await sequelize.query(
+    'CREATE TABLE IF NOT EXISTS muban(mubanId smallint(6) unsigned NOT NULL auto_increment,id varchar(255),name varchar(255),mubanUrl varchar(255),type varchar(255),time varchar(255),text longtext,md longtext,comment varchar(255),star int(10),PRIMARY KEY (`mubanId`) ) ENGINE=InnoDB DEFAULT CHARSET=gbk',
+  );
+  log.blue('muban表创建成功');
+  await sequelize.query(
+    'CREATE TABLE IF NOT EXISTS comment(commentId smallint(6) unsigned NOT NULL auto_increment,id varchar(255) ,blogId varchar(255),text varchar(255),PRIMARY KEY (`commentId`)) ENGINE=InnoDB DEFAULT CHARSET=gbk',
+  );
+  log.blue('comment表创建成功');
+  await sequelize.query(
+    'CREATE TABLE IF NOT EXISTS leaveword(lwId smallint(6) unsigned NOT NULL auto_increment,id varchar(255),name varchar(255),time varchar(255),text varchar(255),PRIMARY KEY(`lwId`)) ENGINE=InnoDB DEFAULT CHARSET=gbk',
+  );
+  log.blue('leaveword表创建成功');
+  await sequelize.query(
+    'CREATE TABLE IF NOT EXISTS visit(id smallint(6) unsigned NOT NULL auto_increment,name varchar(255),type varchar(255),ip varchar(255),address varchar(255),time int(100),PRIMARY KEY(`id`)) ENGINE=InnoDB DEFAULT CHARSET=gbk',
+  );
+  log.blue('visit表创建成功');
+  await sequelize.query(
+    'CREATE TABLE IF NOT EXISTS filedata(id smallint(6) unsigned NOT NULL auto_increment,path varchar(255),name varchar(255),str LONGTEXT,type varchar(255),cur int(100),PRIMARY KEY(`id`)) ENGINE=InnoDB DEFAULT CHARSET=gbk',
+  );
+  log.blue('filedata表创建成功');
+  // await dropAll();
 };

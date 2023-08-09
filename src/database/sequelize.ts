@@ -25,15 +25,15 @@ const sequelize = new Sequelize(
 );
 
 // 测试数据库链接
-// sequelize
-//   .authenticate()
-//   .then(() => {
-//     console.log('数据库连接成功');
-//     User(sequelize);
-//   })
-//   .catch((err: any) => {
-//     // 数据库连接失败时打印输出
-//     console.error(err);
-//     throw err;
-//   });
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('数据库连接成功');
+    User(sequelize);
+  })
+  .catch((err: any) => {
+    // 数据库连接失败时打印输出
+    console.error(err);
+    throw err;
+  });
 export default sequelize;
