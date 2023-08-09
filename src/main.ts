@@ -39,9 +39,9 @@ async function bootstrap() {
       location: `/api-json`,
     },
   ]);
-  await app.listen(3333);
+  await app.listen(3038);
   console.log('!!!!!!!!!');
-  log.blue('api-doc访问地址：http://localhost:3333/doc.html');
+  log.blue('api-doc访问地址：http://localhost:3038/doc.html');
   console.log('!!!!!!!!!');
 }
 bootstrap();
