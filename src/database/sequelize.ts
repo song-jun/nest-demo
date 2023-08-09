@@ -29,7 +29,7 @@ sequelize
   .authenticate()
   .then(() => {
     console.log('数据库连接成功');
-    User(sequelize);
+    // User(sequelize);
   })
   .catch((err: any) => {
     // 数据库连接失败时打印输出
